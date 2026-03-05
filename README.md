@@ -65,38 +65,10 @@ collaborative-board-api/
 │   └── schema.prisma
 ├── package.json
 └── README.md
-```
 
-erDiagram
-USER ||--o{ BOARD : owns
-BOARD ||--o{ COLUMN : contains
-COLUMN ||--o{ CARD : holds
-CARD }o--o{ TAG : has
-
-    USER {
-        string id PK
-        string email UK
-        string password
-        string name
-    }
-    BOARD {
-        string id PK
-        string name
-        string userId FK
-    }
-    COLUMN {
-        string id PK
-        string title
-        string boardId FK
-    }
-    CARD {
-        string id PK
-        string title
-        string description
-        datetime dueDate
-        string columnId FK
-    }
+![Collaborative Board API Schema](./assets/db-schema.png)
 
 ## License
 
 This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details.
+```
