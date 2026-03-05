@@ -2,10 +2,6 @@
 
 A RESTful API for a collaborative board application built with Node.js, Express, and Prisma. This project provides endpoints for user authentication, board and card management, and real-time collaboration features.
 
-Since your deadline is **tomorrow at 5:00 PM**, having a polished README is the difference between a "pass" and an "elimination." The judges specifically asked for your reasoning on **Architecture**, **Folder Structure**, and **Relationships**.
-
-You can copy and adapt these sections into your `README.md`.
-
 ---
 
 ### Folder Structure & Architecture Reasoning
