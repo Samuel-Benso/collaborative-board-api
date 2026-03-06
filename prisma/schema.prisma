@@ -1,17 +1,21 @@
+// prisma/schema.prisma
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
+  id        String    @id @default(uuid())
+  email     String    @unique
   password  String
+  name      String?   // Added this to match your registration logic
   boards    Board[]
-  createdAt DateTime @default(now())
+  createdAt DateTime  @default(now())
 }
 
 model Board {

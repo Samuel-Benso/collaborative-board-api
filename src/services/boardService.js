@@ -1,5 +1,28 @@
-// src/services/boardService.js (Add Column & Card methods)
 import prisma from "../config/db.js";
+
+// 1. ADDED: Create a new board
+export const createBoard = async (data, userId) => {
+  return await prisma.board.create({
+    data: {
+      title: data.title,
+      userId: userId,
+    },
+  });
+};
+
+// 2. ADDED: Get all boards for a specific user
+export const getUserBoards = async (userId) => {
+  return await prisma.board.findMany({
+    where: { userId },
+    include: {
+      columns: {
+        include: {
+          cards: true,
+        },
+      },
+    },
+  });
+};
 
 export const createColumn = async (title, boardId) => {
   return await prisma.column.create({
@@ -19,7 +42,7 @@ export const createCard = async (data) => {
 
 export const updateBoard = async (id, userId, data) => {
   return await prisma.board.update({
-    where: { id, userId }, // Ensure the board belongs to the user
+    where: { id, userId }, 
     data,
   });
 };

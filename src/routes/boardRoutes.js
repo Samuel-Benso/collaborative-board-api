@@ -3,11 +3,13 @@ import {
   createBoard, 
   getMyBoards, 
   addColumn, 
-  addCard 
+  addCard,
+  editBoard,
+  removeBoard 
 } from "../controllers/boardController.js";
+import { createBoardSchema, updateBoardSchema } from "../validators/boardValidator.js";
 import { protect } from "../middleware/authMiddleware.js";
 import { validate } from "../middleware/validateMiddleware.js";
-import { createBoardSchema } from "../validators/boardValidator.js";
 import { createColumnSchema } from "../validators/columnValidator.js";
 import { createCardSchema } from "../validators/cardValidator.js";
 
